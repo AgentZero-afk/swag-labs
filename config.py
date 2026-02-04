@@ -24,9 +24,12 @@ class Timeouts:
 
 VALID_USERS = [
     (Credentials.STANDARD_USER, Credentials.PASSWORD),
-    (Credentials.LOCKED_OUT_USER, Credentials.PASSWORD),
     (Credentials.PROBLEM_USER, Credentials.PASSWORD),
     (Credentials.PERFORMANCE_GLITCH_USER, Credentials.PASSWORD),
     (Credentials.ERROR_USER, Credentials.PASSWORD),
     (Credentials.VISUAL_USER, Credentials.PASSWORD),
+]
+
+INVALID_USERS = [
+    (Credentials.LOCKED_OUT_USER, Credentials.PASSWORD)
 ]

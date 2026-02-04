@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
-from config import URLs, Credentials, Timeouts, VALID_USERS
+from config import URLs, Credentials, Timeouts, VALID_USERS, INVALID_USERS
 from pages.locators import LoginPageLocators
 
 
@@ -63,6 +63,10 @@ def logged_in_browser(browser):
 
 @pytest.fixture(params=VALID_USERS)
 def valid_user(request):
+    return {"username": request.param[0], "password": request.param[1]}
+
+@pytest.fixture(params=INVALID_USERS)
+def invalid_user(request):
     return {"username": request.param[0], "password": request.param[1]}
 
 
