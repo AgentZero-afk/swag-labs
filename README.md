@@ -1,14 +1,14 @@
 # Swag Labs AQA
 
-Автоматизированные UI-тесты для [Swag Labs](https://www.saucedemo.com/) — демо-сайта интернет-магазина от Sauce Labs.
+Автоматизированные UI-тесты для [Swag Labs](https://www.saucedemo.com/) - демо-сайта интернет-магазина от Sauce Labs.
 
 ## Технологии
 
 - **Python 3.x**
-- **Selenium WebDriver** — автоматизация браузера
-- **Pytest** — тестовый фреймворк
-- **Page Object Model** — паттерн проектирования тестов
-- **webdriver-manager** — автоматическое управление драйверами
+- **Selenium WebDriver** - автоматизация браузера
+- **Pytest** - тестовый фреймворк
+- **Page Object Model** - паттерн проектирования тестов
+- **webdriver-manager** - автоматическое управление драйверами
 
 ## Структура проекта
 
