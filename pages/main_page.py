@@ -37,41 +37,42 @@ class MainPage(BasePage):
     def click_product_link(self):
         self.click_element(MainPageLocators.ITEM_LINK)
 
-    def should_be_sorted_by_price_high_to_low(self):
+    def sort_by_price_high_to_low(self):
         self.select_sort_option("hilo")
+
+    def should_be_sorted_by_price_high_to_low(self):
         prices = self.get_prices()
-        assert prices == sorted(prices, reverse=True)
+        assert prices == sorted(prices, reverse=True), f"Expected sorted hi-lo"
+
+    def sort_by_price_low_to_high(self):
+        self.select_sort_option("lohi")
 
     def should_be_sorted_by_price_low_to_high(self):
-        self.select_sort_option("lohi")
         prices = self.get_prices()
-        assert prices == sorted(prices)
+        assert prices == sorted(prices), f"Expected sorted lo-hi"
+
+    def sort_by_name_z_to_a(self):
+        self.select_sort_option("za")
 
     def should_be_sorted_by_name_z_to_a(self):
-        self.select_sort_option("za")
         names = self.get_product_names()
-        assert names == sorted(names, reverse=True)
+        assert names == sorted(names, reverse=True), f"Expected sorted z-a"
+
+    def sort_by_name_a_to_z(self):
+        self.select_sort_option("az")
 
     def should_be_sorted_by_name_a_to_z(self):
-        self.select_sort_option("az")
         names = self.get_product_names()
-        assert names == sorted(names)
+        assert names == sorted(names), f"Expected sorted a-z"
 
     def should_show_badge_after_add_to_cart(self):
-        self.add_to_cart()
-        assert self.is_cart_badge_visible()
+        assert self.is_cart_badge_visible(), f"After adding to cart, cart_badge is should be visible"
 
     def should_hide_badge_after_remove_from_cart(self):
-        self.add_to_cart()
-        self.remove_from_cart()
-        assert self.is_element_disappeared(MainPageLocators.SHOPPING_CART_BADGE)
+        assert self.is_element_disappeared(MainPageLocators.SHOPPING_CART_BADGE), f"After remove all items from cart, cart_badge is not disappeared."
 
-    def should_update_cart_count_correctly(self):
-        self.add_multiple_items_to_cart(3)
-        assert self.get_cart_badge_count() == "3"
-        self.remove_from_cart()
-        assert self.get_cart_badge_count() == "2"
+    def should_have_cart_count(self, expected_count: str):
+        assert self.get_cart_badge_count() == expected_count, f"Expected {expected_count} but got {self.get_cart_badge_count()}"
 
-    def should_redirect_to_product_page(self):
-        self.click_product_link()
-        assert URLs.ITEM_URL_TEMPLATE.format("4") == self.get_current_url()
+    def should_redirect_to_product_page(self, product_id: str):
+        assert URLs.ITEM_URL_TEMPLATE.format(product_id) == self.get_current_url(), f"Expected {URLs.ITEM_URL_TEMPLATE.format(product_id)} got {self.get_current_url()}"

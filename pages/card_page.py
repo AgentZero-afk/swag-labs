@@ -13,8 +13,7 @@ class CardPage(BasePage):
             self.is_element_visible(CardPageLocators.ADD_TO_CART_BUTTON)
         ])
 
-    def click_product_link(self):
-        self.click_element(MainPageLocators.ITEM_LINK)
+
 
     def click_back_to_products(self):
         self.click_element(CardPageLocators.BACK_TO_PRODUCTS_BUTTON)
@@ -35,5 +34,4 @@ class CardPage(BasePage):
         assert self.is_product_card_complete()
 
     def should_redirect_to_inventory(self):
-        self.click_back_to_products()
         assert self.get_current_url() == URLs.INVENTORY_URL

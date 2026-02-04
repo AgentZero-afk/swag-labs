@@ -13,6 +13,7 @@ def card_page(logged_in_browser):
 class TestProductCard:
     def test_back_button_redirects_to_inventory(self, card_page):
         card_page.click_product_link()
+        card_page.click_back_to_products()
         card_page.should_redirect_to_inventory()
 
     def test_product_card_displays_all_elements(self, card_page):

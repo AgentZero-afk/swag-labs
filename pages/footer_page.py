@@ -17,22 +17,22 @@ class FooterPage(BasePage):
     def is_copyright_visible(self) -> bool:
         return self.is_element_visible(FooterLocators.COPYRIGHT_INFO)
 
-    def verify_social_link(self, click_method, expected_url_part: str):
+    def click_on_social_link(self, click_method):
         click_method()
         self.switch_to_new_tab()
+
+    def should_be_redirect_to_social_link(self, expected_url_part: str):
         self.wait.until(EC.url_contains(expected_url_part))
-        assert expected_url_part in self.get_current_url()
-        self.close_tab_and_switch_back()
-        self.browser.get(URLs.INVENTORY_URL)
+        assert expected_url_part in self.get_current_url(), f"Expected {expected_url_part} but got {self.get_current_url()}"
 
     def should_open_twitter(self):
-        self.verify_social_link(self.click_twitter_link, "x.com/saucelabs")
+        self.should_be_redirect_to_social_link("x.com/saucelabs")
 
     def should_open_facebook(self):
-        self.verify_social_link(self.click_facebook_link, "facebook.com/saucelabs")
+        self.should_be_redirect_to_social_link("facebook.com/saucelabs")
 
     def should_open_linkedin(self):
-        self.verify_social_link(self.click_linkedin_link, "linkedin.com/company/sauce-labs")
+        self.should_be_redirect_to_social_link("linkedin.com/company/sauce-labs")
 
     def should_display_copyright(self):
         assert self.is_copyright_visible()
