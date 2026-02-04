@@ -35,4 +35,4 @@ class FooterPage(BasePage):
         self.should_be_redirect_to_social_link("linkedin.com/company/sauce-labs")
 
     def should_display_copyright(self):
-        assert self.is_copyright_visible()
+        assert self.is_copyright_visible(), f"Copyright info is not display"

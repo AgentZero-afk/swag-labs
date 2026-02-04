@@ -31,7 +31,10 @@ class CardPage(BasePage):
         self.click_element(CardPageLocators.ADD_TO_CART_BUTTON)
 
     def should_display_complete_product_card(self):
-        assert self.is_product_card_complete()
+        assert self.is_product_card_complete(), f"One of element is not in DOM card"
 
     def should_redirect_to_inventory(self):
-        assert self.get_current_url() == URLs.INVENTORY_URL
+        assert self.get_current_url() == URLs.INVENTORY_URL, f"Expected {URLs.INVENTORY_URL} got {self.get_current_url()}"
+
+    def click_product_link(self):
+        self.click_element(MainPageLocators.ITEM_LINK)

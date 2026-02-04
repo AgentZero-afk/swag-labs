@@ -29,13 +29,13 @@ class NavBarPage(BasePage):
         self.browser.get(URLs.ITEM_URL_TEMPLATE.format(product_id))
 
     def should_navigate_to_inventory(self):
-        assert self.get_current_url() == URLs.INVENTORY_URL
+        assert self.get_current_url() == URLs.INVENTORY_URL, f"Expected {URLs.INVENTORY_URL} got {self.get_current_url()}"
 
     def should_navigate_to_about(self):
-        assert self.get_current_url() == URLs.ABOUT_URL
+        assert self.get_current_url() == URLs.ABOUT_URL, f"Expected {URLs.ABOUT_URL}, got {self.get_current_url()}"
 
     def should_logout_successfully(self):
-        assert self.get_current_url() == URLs.BASE_URL
+        assert self.get_current_url() == URLs.BASE_URL, f"Expected {URLs.BASE_URL} got {self.get_current_url()}"
 
     def should_close_nav_menu(self):
-        assert self.is_element_disappeared(NavBarLocators.NAV_BAR_LIST)
+        assert self.is_element_disappeared(NavBarLocators.NAV_BAR_LIST), f"Nav-menu is not disappeared"

@@ -32,7 +32,7 @@ class LoginPage(BasePage):
         assert self.is_password_form_visible(), f"Expected visible password form, got invisible"
 
     def should_show_error_for_invalid_credentials(self):
-        assert self.is_error_notification_visible()
+        assert self.is_error_notification_visible(), f"Error notification is not visible"
         error_text = self.get_error_message()
         assert "do not match any user" in error_text, f"Expected 'do not match any user' in {error_text}"
 
