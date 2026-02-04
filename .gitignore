@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+*.pytest_cache
+../Swag-labs-autotest-AI/.idea/
+.vscode/
+*.iml
+venv/
+.venv/
+env/
+reports/
+allure-results/
+*.html
+*.log
+.DS_Store
+Thumbs.db
