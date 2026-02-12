@@ -63,3 +63,6 @@ class BasePage:
     def close_tab_and_switch_back(self):
         self.browser.close()
         self.browser.switch_to.window(self.browser.window_handles[0])
+
+    def refresh_page(self):
+        self.browser.refresh()

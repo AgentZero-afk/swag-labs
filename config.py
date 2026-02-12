@@ -3,6 +3,7 @@ class URLs:
     INVENTORY_URL = "https://www.saucedemo.com/inventory.html"
     CART_URL = "https://www.saucedemo.com/cart.html"
     CHECKOUT_URL = "https://www.saucedemo.com/checkout-step-one.html"
+    CHECKOUT_STEP_TWO_URL = "https://www.saucedemo.com/checkout-step-two.html"
     ITEM_URL_TEMPLATE = "https://www.saucedemo.com/inventory-item.html?id={}"
     ABOUT_URL = "https://saucelabs.com/"
 

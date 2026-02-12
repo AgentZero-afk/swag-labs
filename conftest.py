@@ -25,6 +25,14 @@ def _login(driver, username: str = Credentials.STANDARD_USER, password: str = Cr
     driver.find_element(*LoginPageLocators.PASSWORD_FORM).send_keys(password)
     driver.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
 
+def _logout_and_login(browser):
+    from pages.nav_bar_page import NavBarPage
+    from pages.login_page import LoginPage
+    nav_page = NavBarPage(browser,browser.current_url)
+    nav_page.open_nav_menu()
+    nav_page.click_logout()
+    login_page = LoginPage(browser,URLs.BASE_URL)
+    login_page.login()
 
 def get_product_links() -> list[str]:
     driver = webdriver.Chrome(options=_get_chrome_options(headless=True))
@@ -69,7 +77,6 @@ def valid_user(request):
 def invalid_user(request):
     return {"username": request.param[0], "password": request.param[1]}
 
-
 _product_links_cache = None
 
 
@@ -83,3 +90,5 @@ def get_cached_product_links() -> list[str]:
 @pytest.fixture
 def product_links():
     return get_cached_product_links()
+
+

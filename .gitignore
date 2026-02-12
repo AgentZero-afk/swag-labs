@@ -3,7 +3,7 @@ __pycache__/
 *$py.class
 .pytest_cache/
 *.pytest_cache
-../Swag-labs-autotest-AI/.idea/
+../Swag-rflabs-autotest-AI/.idea/
 .vscode/
 *.iml
 venv/

@@ -76,3 +76,14 @@ class MainPage(BasePage):
 
     def should_redirect_to_product_page(self, product_id: str):
         assert URLs.ITEM_URL_TEMPLATE.format(product_id) == self.get_current_url(), f"Expected {URLs.ITEM_URL_TEMPLATE.format(product_id)} got {self.get_current_url()}"
+
+    def go_to_cart(self):
+        self.click_element(MainPageLocators.SHOPPING_CART_LINK)
+
+    def get_product_desc(self) -> list[str]:
+        desc_elements = self.get_elements(MainPageLocators.ITEM_DESCRIPTION)
+        return [el.text for el in desc_elements]
+
+    def get_product_prices_text(self) -> list[str]:
+        price_elements = self.get_elements(MainPageLocators.ITEM_PRICE)
+        return [el.text for el in price_elements]

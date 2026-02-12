@@ -20,6 +20,7 @@ class MainPageLocators:
     ADD_TO_CART_BUTTONS = (By.CSS_SELECTOR, "button[data-test*='add-to-cart']")
     ITEM_LINK = (By.CSS_SELECTOR, "a[id='item_4_title_link']")
     ALL_ITEMS = (By.CSS_SELECTOR, "div[data-test='inventory-item-name']")
+    ITEM_DESCRIPTION = (By.CSS_SELECTOR, "div[data-test='inventory-item-desc']")
 
 
 class CardPageLocators:
@@ -49,17 +50,24 @@ class FooterLocators:
 
 
 class CartPageLocators:
-    CART_ITEM = (By.CSS_SELECTOR, "div[data-test='inventory-item']")
+    CART_ITEM = (By.CSS_SELECTOR, "div[data-test='inventory-item-name']")
+    CART_ITEM_LINK = (By.CSS_SELECTOR, "a[data-test^='item-'][data-test$='-title-link']")
+    DESCRIPTION_ITEM_CART = (By.CSS_SELECTOR, "div[data-test='inventory-item-desc']")
+    PRICE_ITEM_CART = (By.CSS_SELECTOR, "div[data-test='inventory-item-price']")
+    REMOVE_ITEM_FROM_CART_BUTTON = (By.CSS_SELECTOR, "button[data-test^='remove-']")
+    BACK_TO_ITEM_LIST_BUTTON = (By.CSS_SELECTOR, "button[data-test='continue-shopping']")
     CHECKOUT_BUTTON = (By.CSS_SELECTOR, "button[data-test='checkout']")
-    CONTINUE_SHOPPING_BUTTON = (By.CSS_SELECTOR, "button[data-test='continue-shopping']")
-    REMOVE_BUTTON = (By.CSS_SELECTOR, "button[data-test*='remove']")
+    CART_QUANTITY = (By.CSS_SELECTOR, "div[data-test='item-quantity']")
 
 
 class CheckoutPageLocators:
+    CANCEL_BUTTON = (By.CSS_SELECTOR, "button[data-test='cancel']")
+    CONTINUE_BUTTON = (By.CSS_SELECTOR, "input[data-test='continue']")
     FIRST_NAME_INPUT = (By.CSS_SELECTOR, "input[data-test='firstName']")
     LAST_NAME_INPUT = (By.CSS_SELECTOR, "input[data-test='lastName']")
     POSTAL_CODE_INPUT = (By.CSS_SELECTOR, "input[data-test='postalCode']")
-    CONTINUE_BUTTON = (By.CSS_SELECTOR, "input[data-test='continue']")
-    CANCEL_BUTTON = (By.CSS_SELECTOR, "button[data-test='cancel']")
-    FINISH_BUTTON = (By.CSS_SELECTOR, "button[data-test='finish']")
-    COMPLETE_HEADER = (By.CSS_SELECTOR, "h2[data-test='complete-header']")
+    ERROR_MESSAGE = (By.CSS_SELECTOR, "h3[data-test='error']")
+    ERROR_CLOSE_BUTTON = (By.CSS_SELECTOR, "button[data-test='error-button']")
+    VALIDATION_ICON = (By.CSS_SELECTOR, "svg[data-icon='times-circle']")
+
+
