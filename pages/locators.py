@@ -70,4 +70,16 @@ class CheckoutPageLocators:
     ERROR_CLOSE_BUTTON = (By.CSS_SELECTOR, "button[data-test='error-button']")
     VALIDATION_ICON = (By.CSS_SELECTOR, "svg[data-icon='times-circle']")
 
+class CheckoutStepTwoPageLocators:
+    CANCEL_BUTTON = (By.CSS_SELECTOR, "button[data-test='cancel']")
+    FINISH_BUTTON = (By.CSS_SELECTOR, "button[data-test='finish']")
+    PAYMENT_INFO_LABEL = (By.CSS_SELECTOR, "div[data-test='payment-info-label']")
+    PAYMENT_INFO_VALUE = (By.CSS_SELECTOR, "div[data-test='payment-info-value']")
+    SHIPPING_INFO_LABEL = (By.CSS_SELECTOR, "div[data-test='shipping-info-label']")
+    SHIPPING_INFO_VALUE = (By.CSS_SELECTOR, "div[data-test='shipping-info-value']")
+    PRICE_INFO_LABEL = (By.CSS_SELECTOR, "div[data-test='total-info-label']")
+    PRICE_ITEM_INFO_VALUE = (By.CSS_SELECTOR, "div[data-test='subtotal-label']")
+    PRICE_ITEM_TAX_VALUE = (By.CSS_SELECTOR, "div[data-test='tax-label']")
+    PRICE_ITEM_TOTAL_VALUE = (By.CSS_SELECTOR, "div[data-test='total-label']")
+
 

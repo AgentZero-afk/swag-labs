@@ -14,19 +14,25 @@
 
 ```
 swag-labs-aqa/
-├── pages/                  # Page Object классы
-│   ├── base_page.py        # Базовый класс страницы
-│   ├── login_page.py       # Страница авторизации
-│   ├── main_page.py        # Главная страница (каталог)
-│   ├── card_page.py        # Страница карточки товара
-│   ├── nav_bar_page.py     # Навигационная панель
-│   ├── footer_page.py      # Футер
-│   └── locators.py         # Локаторы элементов
-├── test_login_page.py      # Тесты авторизации
-├── test_main_page.py       # Тесты главной страницы
-├── test_card_page.py       # Тесты карточки товара
-├── test_nav_bar.py         # Тесты навигации
-├── test_footer.py          # Тесты футера
+├── pages/                          # Page Object классы
+│   ├── base_page.py                # Базовый класс страницы
+│   ├── login_page.py               # Страница авторизации
+│   ├── main_page.py                # Главная страница (каталог)
+│   ├── card_page.py                # Страница карточки товара
+│   ├── cart_page.py                # Страница корзины
+│   ├── checkout_page.py            # Страница оформления заказа
+│   ├── checkout_step_two_page.py   # Страница подтверждения заказа
+│   ├── nav_bar_page.py             # Навигационная панель
+│   ├── footer_page.py              # Футер
+│   └── locators.py                 # Локаторы элементов
+├── test_login_page.py              # Тесты авторизации
+├── test_main_page.py               # Тесты главной страницы
+├── test_card_page.py               # Тесты карточки товара
+├── test_cart_page.py               # Тесты корзины
+├── test_checkout_page.py           # Тесты оформления заказа
+├── test_checkout_step_two_page.py  # Тесты подтверждения заказа
+├── test_nav_bar.py                 # Тесты навигации
+├── test_footer.py                  # Тесты футера
 ├── config.py               # Конфигурация (URL, credentials, timeouts)
 ├── conftest.py             # Pytest фикстуры
 ├── pytest.ini              # Настройки pytest
